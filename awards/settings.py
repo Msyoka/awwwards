@@ -44,6 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'projects',
+    'cloudinary',
+    'bootstrap4',
+    'django_registration',
 ]
 
 MIDDLEWARE = [
@@ -81,9 +86,14 @@ WSGI_APPLICATION = 'awards.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default':{
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('DB_NAME', 'postgres'),
+        'USER': config('DB_USER', 'postgres'),
+        'PASSWORD': config('DB_PASSWORD', ''),
+        'HOST': config('DB_HOST', 'localhost'),
+        'PORT': '',
+       
     }
 }
 
