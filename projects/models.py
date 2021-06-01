@@ -30,7 +30,7 @@ class Projects(models.Model):
         ordering = ['-name']
 
     def __str__(self):
-        self.name
+        return self.name 
 
     @classmethod
     def search_project(cls, word):
